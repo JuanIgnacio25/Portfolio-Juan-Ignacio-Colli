@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/NavBar";
+import ThemeClientEffect from "@/components/ThemeClientEffect";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const getInter = Inter({
   subsets: ["latin"],
+  variable: "--font-sans",
 });
 
 const geistMono = Geist_Mono({
@@ -23,10 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${getInter.variable} ${geistMono.variable} antialiased`}
       >
+        <ThemeClientEffect/>
+        <Navbar/>
         {children}
       </body>
     </html>
