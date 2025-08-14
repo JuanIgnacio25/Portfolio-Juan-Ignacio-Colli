@@ -9,6 +9,7 @@ import { SectionsProps } from "@/types";
 import { FileDown } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 
+import { FaWhatsapp } from "react-icons/fa";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 
@@ -66,6 +67,11 @@ const HeroSection = ({ language }: SectionsProps) => {
               <Link href={"https://github.com/JuanIgnacio25"} target="_blank">
                 <Button variant="social" size={"icon"}>
                   <FaGithub />
+                </Button>
+              </Link>
+              <Link href={"https://wa.me/5493471670274"} target="_blank">
+                <Button variant="social" size={"icon"}>
+                  <FaWhatsapp />
                 </Button>
               </Link>
             </div>
