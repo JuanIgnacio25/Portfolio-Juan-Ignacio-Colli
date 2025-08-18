@@ -2,6 +2,7 @@
 
 import { useAppStore } from "@/store/useAppStore";
 import HeroSection from "@/components/HeroSection";
+import ProjectsSection from "@/components/Projects/ProjectsSection";
 
 const Home = () => {
   const { language } = useAppStore();
@@ -14,8 +15,9 @@ const Home = () => {
   };
 
   return (
-    <div className="container flex items-center justify-center">
+    <div className="w-full flex flex-col items-center justify-center">
       <HeroSection language={language}/>
+      <ProjectsSection language={language}/>
     </div>
   );
 };

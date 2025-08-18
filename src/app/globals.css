@@ -37,6 +37,11 @@
   --color-accent-hover: hsl(var(--accent-hover));
   --color-accent-light: hsl(var(--accent-light));
 
+  --background-image-gradient-2: var(--gradient-2);
+
+  --shadow-elegant: var(--shadow-elegant);
+  --shadow-glow: var(--shadow-glow);
+
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
 
@@ -111,6 +116,7 @@
 
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --shadow-elegant: 0 10px 30px -10px hsl(var(--brand) / 0.1);
+    --shadow-glow: 0 0 12px 1px hsl(var(--brand) / 0.3);
   }
 
   .dark {
@@ -174,6 +180,7 @@
     );
 
     --shadow-elegant: 0 10px 30px -10px hsl(var(--brand) / 0.2);
+    --shadow-glow: 0 0 12px 1px hsl(var(--brand) / 0.3);
   }
 
   /* Smooth scrolling */

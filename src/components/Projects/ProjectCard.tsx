@@ -10,7 +10,6 @@ import Link from "next/link";
 
 const ProjectCard = ({
   project,
-  technologies,
   webSite,
   sourceCode,
 }: ProjectCardProps) => {
@@ -46,32 +45,26 @@ const ProjectCard = ({
         </div>
 
         {/* Imagen principal */}
-        <div className="flex-1 h-56 sm:h-72 md:h-80 lg:h-60 flex items-center justify-center py-3">
+        <div className="flex-1 h-56 flex items-center justify-center py-3">
           <Image
             src={selectedImage}
             alt="Project Image"
             width={1000}
             height={1000}
-            quality={100}
+            quality={80}
+            priority
             className="w-auto h-full object-contain rounded-lg"
           />
         </div>
       </div>
 
       {/* Texto y botones */}
-      <div className="p-6">
+      <div className="p-4 md:p-6">
         <h3 className="text-2xl font-bold mb-3 text-foreground">
           {project.title}
         </h3>
 
-        <p className="text-muted-foreground mb-4 leading-relaxed">
-          {project.description}
-        </p>
-
         <div className="mb-6">
-          <p className="text-sm font-medium text-foreground mb-2">
-            {technologies}
-          </p>
           <div className="flex flex-wrap gap-2">
             {project.technologies.map((tech) => (
               <span
@@ -84,6 +77,10 @@ const ProjectCard = ({
           </div>
         </div>
 
+        <p className="text-muted-foreground mb-4 leading-relaxed">
+          {project.description}
+        </p>
+
         <div className="flex gap-3">
           <Link href={project.webSite} target="_blank">
             <Button className="bg-brand hover:bg-brand-hover text-neutral-text dark:text-secondary flex items-center gap-2">
@@ -93,10 +90,7 @@ const ProjectCard = ({
           </Link>
 
           <Link href={project.sourceCode} target="_blank">
-            <Button
-              variant="outline"
-              className="flex items-center gap-2"
-            >
+            <Button variant="outline" className="flex items-center gap-2">
               <Github className="h-4 w-4" />
               {sourceCode}
             </Button>

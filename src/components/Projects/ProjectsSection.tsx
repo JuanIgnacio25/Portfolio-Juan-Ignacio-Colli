@@ -5,7 +5,7 @@ import { useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = ({ language }: SectionsProps) => {
-  const { title, subtitle, technologies, webSite, sourceCode, projects } =
+  const { title, webSite, sourceCode, projects } =
     projectsContent[language];
 
     useEffect(() => { console.log(projects);
@@ -23,9 +23,9 @@ const ProjectsSection = ({ language }: SectionsProps) => {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {projects.map((project, index) => {
-            return <ProjectCard project={project} technologies={technologies} webSite={webSite} sourceCode={sourceCode} key={index}/>
+            return <ProjectCard project={project} webSite={webSite} sourceCode={sourceCode} key={index}/>
           })}
           {/* Main project */}
 
