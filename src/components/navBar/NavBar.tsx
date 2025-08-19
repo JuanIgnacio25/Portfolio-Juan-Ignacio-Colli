@@ -67,14 +67,14 @@ const Navbar = () => {
             />
           </div>
 
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-2">
             <Button
               variant="ghost"
               size="sm"
               onClick={toggleLanguage}
-              className="text-foreground/80 hover:text-brand hover:bg-brand/10"
+              className="text-foreground/80 hover:text-brand hover:bg-brand-hover/10"
             >
-              <Languages className="h-4 w-4 mr-1" />
+              <Languages className="!h-5 !w-5 mr-1" />
               {language.toUpperCase()}
             </Button>
 
@@ -82,12 +82,12 @@ const Navbar = () => {
               variant="ghost"
               size="sm"
               onClick={toggleTheme}
-              className="text-foreground/80 hover:text-brand hover:bg-brand/10"
+              className="text-foreground/80 hover:text-brand hover:bg-brand-hover/10"
             >
               {darkMode ? (
-                <Sun className="h-4 w-4" />
+                <Sun className="!h-5 !w-5" />
               ) : (
-                <Moon className="h-4 w-4" />
+                <Moon className="!h-5 !w-5" />
               )}
             </Button>
             <div className="flex md:hidden space-x-8">

@@ -1,10 +1,10 @@
-import type { Language , NavBarContent} from "@/types";
+import type { Language, NavBarContent } from "@/types";
 
 export const navBarContent: Record<Language, NavBarContent> = {
   es: {
-    links: ['Inicio', 'Sobre mí', 'Proyectos', 'Contacto'],
+    links: ["Inicio", "Proyectos", "Sobre mí", "Contacto"],
   },
   en: {
-    links: ['Home', 'About', 'Projects', 'Contact'],
+    links: ["Home", "Projects", "About", "Contact"],
   },
-}
+};
