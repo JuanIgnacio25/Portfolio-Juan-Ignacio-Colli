@@ -19,7 +19,7 @@ const HeroSection = ({ language }: SectionsProps) => {
   return (
     <section
       id="hero"
-      className="flex flex-col-reverse md:flex-row items-center justify-around relative my-10 md:my-20 gap-4 md:gap-0"
+      className="container max-w-full sm:max-w-[80%] min-h-[91vh] md:min-h-[69vh] flex flex-col-reverse md:flex-row items-center justify-end md:justify-around relative my-0 md:my-20 gap-2 md:gap-0"
     >
       {/* Content */}
       <div className="flex items-center justify-center w-full md:w-[52%] relative px-4 lg:px-0 text-center md:text-start">
@@ -76,13 +76,17 @@ const HeroSection = ({ language }: SectionsProps) => {
               </Link>
             </div>
           </div>
+
+          <div className="w-full flex justify-center mt-6 md:hidden animate-bounce">
+            <ChevronDown className="h-6 w-6 text-muted-foreground" />
+          </div>
         </div>
       </div>
 
       {/* Personal Image */}
-      <div className="w-full md:w-[48%] flex items-center justify-center py-8 md:py-0">
+      <div className="w-full md:w-[48%] flex items-center justify-center py-2 sm:py-8 md:py-0">
         {/* Contenedor principal con el borde de gradiente */}
-        <div className="group relative w-72 md:w-90 h-72 md:h-90 p-1 rounded-full overflow-hidden shadow-xl bg-gradient-to-r from-brand-light to-accent transition-all duration-500 ease-in-out hover:shadow-2xl">
+        <div className="group relative w-64 sm:w-72 lg:w-90 h-64 sm:h-72 lg:h-90 p-1 rounded-full overflow-hidden shadow-xl bg-gradient-to-r from-brand-light to-accent transition-all duration-500 ease-in-out hover:shadow-2xl">
           {/* Contenedor interno para la imagen */}
           <div className="relative w-full h-full rounded-full overflow-hidden">
             <Image
@@ -98,7 +102,7 @@ const HeroSection = ({ language }: SectionsProps) => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute -bottom-40 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <div className="hidden md:block absolute -bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce">
         <ChevronDown className="h-6 w-6 text-muted-foreground" />
       </div>
     </section>
