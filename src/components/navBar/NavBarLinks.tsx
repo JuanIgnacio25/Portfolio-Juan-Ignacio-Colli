@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 const NavBarLinks = ({ language, scrollToSection }: NavBarLinksProps) => {
   const [currentSection, setCurrentSection] = useState("hero");
   const { links } = navBarContent[language];
-  const sectionIds = ["hero", "projects", "about", "contact"];
+  const sectionIds = ["hero", "projects", "technologies" ,"about", "contact"];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
