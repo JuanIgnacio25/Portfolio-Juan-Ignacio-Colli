@@ -1,15 +1,11 @@
 import { SectionsProps } from "@/types";
 
 import { projectsContent } from "@/constants/ProjectsContent";
-import { useEffect } from "react";
 import ProjectCard from "./ProjectCard";
 
 const ProjectsSection = ({ language }: SectionsProps) => {
   const { title, webSite, sourceCode, projects } =
     projectsContent[language];
-
-    useEffect(() => { console.log(projects);
-    }, [])
 
   return (
     <section id="projects" className="w-full py-20 relative bg-gradient-2">
