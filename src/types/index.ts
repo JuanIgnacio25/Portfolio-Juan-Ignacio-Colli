@@ -1,3 +1,5 @@
+import { IconType } from "react-icons";
+
 export type Language = "es" | "en";
 
 /* Content Interfaces */
@@ -10,7 +12,7 @@ export interface NotFoundContent {
   button: string;
 }
 
-/* NavBAR */
+/* NavBar */
 
 export interface NavBarContent {
   links: string[];
@@ -53,6 +55,29 @@ export interface ProjectsContent {
   webSite: string;
   sourceCode: string;
   projects: ProjectsItemContent[];
+}
+
+/* Technologies */
+export interface TechnologiesContent {
+  title: string;
+}
+
+export interface TechnologiesCardsContent {
+  iconSrc: string;
+  title: string;
+  description: string;
+  techList: TechIcons[];
+}
+
+export interface TechIcons {
+  icon? : IconType;
+  name: string;
+}
+
+export interface TechCarouselProps {
+  items: TechIcons[];
+  reverse?: boolean;
+  speed?: number;
 }
 
 /* Props Interfaces */
