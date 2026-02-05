@@ -4,6 +4,7 @@ import { useAppStore } from "@/store/useAppStore";
 import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/Projects/ProjectsSection";
 import Technologies from "@/components/technologies/Technologies";
+import Contact from "@/components/contact/Contact";
 
 const Home = () => {
   const { language } = useAppStore();
@@ -20,6 +21,7 @@ const Home = () => {
       <HeroSection language={language}/>
       <ProjectsSection language={language}/>
       <Technologies language={language}/>
+      <Contact language={language}/>
     </div>
   );
 };
