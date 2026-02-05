@@ -74,10 +74,20 @@ export interface TechIcons {
   name: string;
 }
 
-export interface TechCarouselProps {
-  items: TechIcons[];
-  reverse?: boolean;
-  speed?: number;
+/* Contact */
+export interface ContactContent {
+  title: string;
+}
+
+export interface ContactFormContent {
+  fullName: string;
+  email: string;
+  message: string;
+  buttonText: string;
+}
+
+export interface ContactSocialMediaContent {
+  title: string;
 }
 
 /* Props Interfaces */
@@ -99,4 +109,11 @@ export interface ProjectCardProps {
   project: ProjectsItemContent;
   webSite: string;
   sourceCode: string;
+}
+
+/* TechoCarousel */
+export interface TechCarouselProps {
+  items: TechIcons[];
+  reverse?: boolean;
+  speed?: number;
 }
