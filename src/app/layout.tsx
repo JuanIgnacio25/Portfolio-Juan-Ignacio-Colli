@@ -3,6 +3,7 @@ import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navBar/NavBar";
 import ThemeClientEffect from "@/components/ThemeClientEffect";
+import { Toaster } from "sonner"
 
 const getInter = Inter({
   subsets: ["latin"],
@@ -32,6 +33,7 @@ export default function RootLayout({
         <ThemeClientEffect/>
         <Navbar/>
         {children}
+        <Toaster richColors position="bottom-right" />
       </body>
     </html>
   );
