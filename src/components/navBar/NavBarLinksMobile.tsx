@@ -19,10 +19,10 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const NavBarLinksMobile = ({ language, scrollToSection }: NavBarLinksProps) => {
   const { links } = navBarContent[language];
-  const sectionIds = ["hero", "projects", "about", "contact"];
+  const sectionIds = ["projects", "technologies", "about", "contact"];
 
   const [open, setOpen] = useState(false);
-  const [currentSection, setCurrentSection] = useState("hero");
+  const [currentSection, setCurrentSection] = useState<string | null>(null);
 
   // 👉 Detecta qué sección está visible (igual que en desktop)
   useEffect(() => {
@@ -48,6 +48,17 @@ const NavBarLinksMobile = ({ language, scrollToSection }: NavBarLinksProps) => {
     scrollToSection(sectionId);
     setOpen(false);
   };
+
+  useEffect(() => {
+    const onScrollTop = () => {
+      if (window.scrollY < window.innerHeight * 0.5) {
+        setCurrentSection(null);
+      }
+    };
+
+    window.addEventListener("scroll", onScrollTop);
+    return () => window.removeEventListener("scroll", onScrollTop);
+  }, []);
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -81,13 +92,7 @@ const NavBarLinksMobile = ({ language, scrollToSection }: NavBarLinksProps) => {
             <button
               key={item}
               onClick={() => {
-                if (index === 0) {
-                  window.scrollTo({ top: 0, behavior: "smooth" });
-                  setCurrentSection("hero");
-                  setOpen(false);
-                } else {
-                  handleClick(sectionIds[index]);
-                }
+                handleClick(sectionIds[index]);
               }}
               className={`relative cursor-pointer transition-all duration-300 font-medium
                 ${

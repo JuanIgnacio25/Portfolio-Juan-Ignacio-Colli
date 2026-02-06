@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Moon, Sun, Languages } from "lucide-react";
 
 import { useAppStore } from "@/store/useAppStore";
-import Link from "next/link";
 
 import NavBarLinks from "./NavBarLinks";
 import NavBarLinksMobile from "./NavBarLinksMobile";
@@ -53,11 +52,17 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href={"/"}>
-            <div className="font-bold text-2xl cursor-pointer bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
-              JIC
-            </div>
-          </Link>
+
+          <div
+            className="font-bold text-2xl cursor-pointer bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent"
+            onClick={() => {
+              window.dispatchEvent(new CustomEvent("manual-scroll-start"));
+
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }}
+          >
+            JIC
+          </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex space-x-8">
