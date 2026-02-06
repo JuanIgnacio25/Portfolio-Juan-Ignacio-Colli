@@ -18,7 +18,7 @@ const Contact = ({ language }: SectionsProps) => {
         {/* Grid Layout */}
         <div className="grid gap-10 lg:grid-cols-2 items-start">
           <ContactForm language={language} />
-          <ContactSocialMedia />
+          <ContactSocialMedia language={language}/>
         </div>
       </div>
     </section>
