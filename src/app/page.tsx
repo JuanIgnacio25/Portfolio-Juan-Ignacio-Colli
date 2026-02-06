@@ -2,7 +2,7 @@ import Home from "@/pages/Home";
 
 export default function HomePage() {
   return (
-    <div className="font-sans grid min-h-screen pb-20 gap-16">
+    <div className="font-sans grid min-h-screen mt-16">
       <main className="flex flex-col gap-[32px] row-start-2 items-center justify-center bg-background">
         <Home/>
       </main>
