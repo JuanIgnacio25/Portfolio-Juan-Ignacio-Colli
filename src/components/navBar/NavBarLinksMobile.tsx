@@ -19,7 +19,7 @@ import * as VisuallyHidden from "@radix-ui/react-visually-hidden";
 
 const NavBarLinksMobile = ({ language, scrollToSection }: NavBarLinksProps) => {
   const { links } = navBarContent[language];
-  const sectionIds = ["projects", "technologies", "about", "contact"];
+  const sectionIds = ["projects", "technologies", "about", "contact"] as const;
 
   const [open, setOpen] = useState(false);
   const [currentSection, setCurrentSection] = useState<string | null>(null);

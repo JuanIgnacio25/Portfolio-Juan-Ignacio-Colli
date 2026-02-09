@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 
 const NavBarLinks = ({ language, scrollToSection }: NavBarLinksProps) => {
   const { links } = navBarContent[language];
-  const sectionIds = ["projects", "technologies", "about", "contact"];
+  const sectionIds = ["projects", "technologies", "about", "contact"] as const;
 
   const [currentSection, setCurrentSection] = useState<string | null>(null);
   const [observerEnabled, setObserverEnabled] = useState(false);
