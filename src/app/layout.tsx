@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata , Viewport} from "next";
 import { Inter, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navBar/NavBar";
@@ -18,6 +18,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Juan Ignacio Colli | FullStack Developer",
   description: "Juan Ignacio Colli Portfolio",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
