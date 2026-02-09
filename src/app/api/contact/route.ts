@@ -1,27 +1,30 @@
-import { Resend } from "resend"
-import { NextResponse } from "next/server"
-import { getContactSchema } from "@/lib/validations/contactSchema"
+import { Resend } from "resend";
+import { NextResponse } from "next/server";
+import { getContactSchema } from "@/lib/validations/contactSchema";
 
-const resend = new Resend(process.env.RESEND_API_KEY)
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 export async function POST(req: Request) {
   try {
-    const body = await req.json()
-
-    // Validación server-side (IMPORTANTÍSIMO)
-    const schema = getContactSchema("es") // el idioma acá no importa tanto
-    const parsed = schema.safeParse(body)
-
-    if (!parsed.success) {
+    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_EMAIL) {
       return NextResponse.json(
-        { error: "Invalid data" },
-        { status: 400 }
-      )
+        { error: "Server email configuration is missing" },
+        { status: 500 }
+      );
     }
 
-    const { fullName, email, message } = parsed.data
+    const body = await req.json();
 
-   await resend.emails.send({
+    const schema = getContactSchema("es");
+    const parsed = schema.safeParse(body);
+
+    if (!parsed.success) {
+      return NextResponse.json({ error: "Invalid data" }, { status: 400 });
+    }
+
+    const { fullName, email, message } = parsed.data;
+
+    await resend.emails.send({
       from: "Portfolio <onboarding@resend.dev>",
       to: process.env.CONTACT_EMAIL!,
       replyTo: email,
@@ -35,14 +38,11 @@ export async function POST(req: Request) {
           <p>${message}</p>
         </div>
       `,
-    })
+    });
 
-    return NextResponse.json({success: true});
+    return NextResponse.json({ success: true });
   } catch (error) {
-    console.error(error)
-    return NextResponse.json(
-      { error: "Error sending email" },
-      { status: 500 }
-    )
+    console.error(error);
+    return NextResponse.json({ error: "Error sending email" }, { status: 500 });
   }
 }
