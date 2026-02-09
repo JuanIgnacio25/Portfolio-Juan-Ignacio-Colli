@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -14,7 +14,8 @@ import { SiGmail } from "react-icons/si";
 
 const ContactSocialMedia = ({ language }: SectionsProps) => {
   const [copiedEmail, setCopiedEmail] = useState(false);
-  const [copiedText, setCopiedText] = useState("");
+
+  const copiedText = language === "es" ? "copiado" : "copied";
 
   const copyEmail = async () => {
     await navigator.clipboard.writeText("juanignaciocolli28@gmail.com");
@@ -23,10 +24,6 @@ const ContactSocialMedia = ({ language }: SectionsProps) => {
 
     setTimeout(() => setCopiedEmail(false), 2500);
   };
-
-  useEffect(() => {
-    setCopiedText(language == "es" ? "copiado" : "copied");
-  });
 
   return (
     <Card
