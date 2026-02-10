@@ -5,7 +5,6 @@ import HeroSection from "@/components/HeroSection";
 import ProjectsSection from "@/components/Projects/ProjectsSection";
 import Technologies from "@/components/technologies/Technologies";
 import Contact from "@/components/contact/Contact";
-import Footer from "@/components/Footer";
 
 const Home = () => {
   const { language } = useAppStore();
@@ -23,7 +22,6 @@ const Home = () => {
       <ProjectsSection language={language}/>
       <Technologies language={language}/>
       <Contact language={language}/>
-      <Footer/>
     </div>
   );
 };
