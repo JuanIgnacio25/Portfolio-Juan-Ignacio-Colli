@@ -18,8 +18,8 @@ const Technologies = ({ language }: SectionsProps) => {
           {title}
         </h2>
       </div>
-      <div className="flex flex-col relative max-w-6xl">
-        <div className="flex flex-col w-full gap-2">
+      <div className="flex flex-col relative max-w-6xl justify-center items-center">
+        <div className="flex flex-col w-[90vw] gap-2">
           <TechnologiesCarousel items={techs} />
           <TechnologiesCarousel items={techs} reverse />
         </div>
