@@ -45,7 +45,7 @@ const ProjectCard = ({
         </div>
 
         {/* Imagen principal */}
-        <div className="flex-1 h-56 flex items-center justify-center py-3">
+        <div className="flex-1 h-48 md:h-52 flex items-center justify-center py-3">
           <Image
             src={selectedImage}
             alt="Project Image"
@@ -59,8 +59,8 @@ const ProjectCard = ({
       </div>
 
       {/* Texto y botones */}
-      <div className="p-4 md:p-6">
-        <h3 className="text-2xl font-bold mb-3 text-foreground">
+      <div className="p-4  md:py-4 md:px-6">
+        <h3 className="text-xl md:text-2xl font-bold mb-3 text-foreground">
           {project.title}
         </h3>
 
@@ -69,7 +69,7 @@ const ProjectCard = ({
             {project.technologies.map((tech) => (
               <span
                 key={tech}
-                className="bg-brand/10 text-brand px-3 py-1 rounded-full text-sm font-medium"
+                className="bg-brand/10 text-brand px-3 py-1 rounded-full text-xs md:text-sm font-medium"
               >
                 {tech}
               </span>
@@ -77,7 +77,7 @@ const ProjectCard = ({
           </div>
         </div>
 
-        <p className="text-muted-foreground mb-4 leading-relaxed">
+        <p className="text-muted-foreground mb-4 leading-relaxed text-sm md:text-base">
           {project.description}
         </p>
 
