@@ -8,7 +8,7 @@ const Contact = ({ language }: SectionsProps) => {
 
   return (
     <section id="contact" className="w-full py-20 px-4">
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-6xl mx-auto space-y-0 2xl:space-y-12">
         <div className="text-center space-y-4">
           <h2 className="inline-block text-4xl md:text-5xl font-bold mb-4 py-2 bg-gradient-to-r from-brand to-accent bg-clip-text text-transparent">
             {title}
